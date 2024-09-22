@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Update Employee</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-display" viewBox="0 0 16 16">
+            <path d="M0 4s0-2 2-2h12s2 0 2 2v6s0 2-2 2h-4q0 1 .25 1.5H11a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1h.75Q6 13 6 12H2s-2 0-2-2zm1.398-.855a.76.76 0 0 0-.254.302A1.5 1.5 0 0 0 1 4.01V10c0 .325.078.502.145.602q.105.156.302.254a1.5 1.5 0 0 0 .538.143L2.01 11H14c.325 0 .502-.078.602-.145a.76.76 0 0 0 .254-.302 1.5 1.5 0 0 0 .143-.538L15 9.99V4c0-.325-.078-.502-.145-.602a.76.76 0 0 0-.302-.254A1.5 1.5 0 0 0 13.99 3H2c-.325 0-.502.078-.602.145" />
+        </svg>
+        DealsDray
+    </a>
+</nav>
+<div class="container mt-5">
+    <h2>Update Employee</h2>
+    <form id="employeeForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name">
+            <div class="text-danger" id="nameErrMsg"></div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email">
+            <div class="text-danger" id="emailErrMsg"></div>
+        </div>
+        <div class="form-group">
+            <label for="mobile">Mobile No</label>
+            <input type="text" class="form-control" id="mobileNo" placeholder="Enter mobile number">
+            <div class="text-danger" id="mobileNoErrMsg"></div>
+        </div>
+        <div class="form-group">
+            <label for="designation">Designation</label>
+            <select class="form-control" id="designation">
+                <option value="">Select</option>
+                <option value="HR">HR</option>
+                <option value="Manager">Manager</option>
+                <option value="Sales">Sales</option>
+            </select>
+            <div class="text-danger" id="designationErrMsg"></div>
+        </div>
+        <div class="form-group">
+            <label>Gender</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="Male">
+                <label class="form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                <label class="form-check-label" for="female">Female</label>
+            </div>
+            <div class="text-danger" id="genderErrMsg"></div>
+        </div>
+        <div class="form-group">
+            <label>Course</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="mca" value="MCA">
+                <label class="form-check-label" for="mca">MCA</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="bca" value="BCA">
+                <label class="form-check-label" for="bca">BCA</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="bsc" value="BSC">
+                <label class="form-check-label" for="bsc">BSC</label>
+            </div>
+            <div class="text-danger" id="courseErrMsg"></div>
+        </div>
+        <div class="form-group">
+            <label for="imageUpload">Image Upload</label>
+            <input type="file" class="form-control-file" id="imageUpload" accept="image/png, image/jpeg">
+            <div class="text-danger" id="fileErrMsg"></div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="updateBtn">Update</button>
+        <a class="btn btn-warning" href="employeelist.html">Back</a>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.2.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+    var employeeId = new URLSearchParams(window.location.search).get('id');
+    var employees = JSON.parse(localStorage.getItem('employees')) || {};
+    var employeeData = employees[employeeId];
+    if (employeeData) {
+        $('#name').val(employeeData.name);
+        $('#email').val(employeeData.email);
+        $('#mobileNo').val(employeeData.mobile);
+        $('#designation').val(employeeData.designation);
+        $("input[name='gender'][value='" + employeeData.gender + "']").prop('checked', true);
+        $("input[type='checkbox']").prop('checked', false); 
+        employeeData.course.forEach(function(course) {
+            $("input[value='" + course + "']").prop('checked', true);
+        });
+    } else {
+        alert('Employee not found.');
+        window.location.href = 'employeelist.html';
+    }
+    function clearErrorOnInputChange(inputSelector, errorSelector) {
+        $(inputSelector).on('input change', function () {
+            $(errorSelector).text("");
+        });
+    }
+    clearErrorOnInputChange("#name", "#nameErrMsg");
+    clearErrorOnInputChange("#email", "#emailErrMsg");
+    clearErrorOnInputChange("#mobileNo", "#mobileNoErrMsg");
+    clearErrorOnInputChange("#designation", "#designationErrMsg");
+    clearErrorOnInputChange("input[name='gender']", "#genderErrMsg");
+    clearErrorOnInputChange("input[type=checkbox]", "#courseErrMsg");
+    clearErrorOnInputChange("#imageUpload", "#fileErrMsg");
+    $('#employeeForm').on('submit', function(event) {
+        event.preventDefault();
+
+        let valid = true;
+        $(".text-danger").text("");
+        if ($('#name').val().trim() === "") {
+            $("#nameErrMsg").text("Please enter a name.");
+            valid = false;
+        }
+        let email = $('#email').val();
+        let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (email === "" || !emailPattern.test(email)) {
+            $("#emailErrMsg").text("Please enter a valid email.");
+            valid = false;
+        }
+        let mobileNo = $('#mobileNo').val();
+        let mobilePattern = /^\d{10}$/;
+        if (mobileNo === "" || !mobilePattern.test(mobileNo)) {
+            $("#mobileNoErrMsg").text("Please enter a valid mobile number (10 digits).");
+            valid = false;
+        }
+        if ($('#designation').val() === "") {
+            $("#designationErrMsg").text("Please select a designation.");
+            valid = false;
+        }
+        let gender = $("input[name='gender']:checked").val();
+        if (!gender) {
+            $("#genderErrMsg").text("Please select a gender.");
+            valid = false;
+        }
+        let courseChecked = $("input[type=checkbox]:checked").length;
+        if (courseChecked === 0) {
+            $("#courseErrMsg").text("Please select at least one course.");
+            valid = false;
+        }
+        let fileInput = $('#imageUpload')[0];
+        if (!fileInput.files.length) {
+            $("#fileErrMsg").text("Please upload an image.");
+            valid = false;
+        }
+        if (valid) {
+            var updatedEmployee = {
+                id: employeeId, 
+                name: $('#name').val(),
+                email: $('#email').val(),
+                mobile: $('#mobileNo').val(),
+                designation: $('#designation').val(),
+                gender: $("input[name='gender']:checked").val(),
+                course: $("input[type='checkbox']:checked").map(function() {
+                    return this.value;
+                }).get(),
+                image: fileInput.files.length ? fileInput.files[0].name : employeeData.image
+            };
+            employees[employeeId] = updatedEmployee;
+            localStorage.setItem('employees', JSON.stringify(employees));
+
+            alert("Employee updated successfully!");
+
+            window.location.href = 'employeelist.html';
+        } else {
+            alert("Please correct the errors in the form before submitting.");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
